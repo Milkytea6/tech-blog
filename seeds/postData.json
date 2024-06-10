@@ -1,0 +1,18 @@
+[
+    {
+      "title": "Test Post 1",
+      "content": "Test content for post 1",
+      "user_id": 1
+    },
+    {
+      "title": "Test Post 2",
+      "content": "Test content for post 2",
+      "user_id": 2
+    },
+    {
+      "title": "Test Post 3",
+      "content": "Test content for post 3",
+      "user_id": 3
+    }
+  ]
+  
