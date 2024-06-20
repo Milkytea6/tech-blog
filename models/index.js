@@ -9,8 +9,14 @@ User.hasMany(Post, {
 User.hasMany(Comment, {
   foreignKey: 'user_id'
 });
+Comment.belongsTo(User, {
+  foreignKey: 'user_id'
+});
 // Post can have many comment and is related to user
 Post.hasMany(Comment, {
+  foreignKey: 'post_id'
+});
+Comment.belongsTo(Post, {
   foreignKey: 'post_id'
 });
 Post.belongsTo(User, {
@@ -18,11 +24,5 @@ Post.belongsTo(User, {
 });
 
 // Comment is related to a user and a post
-Comment.belongsTo(User, {
-  foreignKey: 'user_id'
-});
-Comment.belongsTo(Post, {
-  foreignKey: 'post_id'
-});
 // Added model exports
 module.exports = { User, Post, Comment };
