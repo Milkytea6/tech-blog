@@ -1,0 +1,20 @@
+{{#each postData}}
+<div class="post">
+    <h2 class="post-title">{{this.title}}</h2>
+    <p class="post-content">{{this.content}}</p>
+    <p class="post-date">{{this.date_created}}</p>
+</div>
+{{/each}}
+<h3>Create New Post</h3>
+<div class="new-post-container">
+    <form class="new-post-form">
+        <div class="form-section">
+            <label>Title</label>
+            <input type="text" id="new-title">
+        </div>
+        <div class="form-section">
+            <label>Content</label>
+            <input type="text" id="new-content">
+        </div>
+    </form>
+</div>
