@@ -1,6 +1,6 @@
 const router =require('express').Router();
 
-router.get('/',req, res =>{
+router.get('/', (req, res) =>{
     try {
         res.render('login');
         console.log('Rendered login.')
