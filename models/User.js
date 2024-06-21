@@ -29,8 +29,11 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [10],
-                isStrongPassword: true,
+                isStrongPassword(value) {
+                    if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/i.test(value)) {
+                        throw new Error('Password must be at least 8 characters long and contain at least one digit, one lowercase letter, and one uppercase letter.');
+                    }
+                }
             },
         },     
 },
