@@ -4,7 +4,7 @@ const sequelize = require('../config/connection');
 class User extends Model {
 
 }
-// User will have an id, name, email, password
+// User will have an id, username, email, password
 User.init(
     {
         id: {

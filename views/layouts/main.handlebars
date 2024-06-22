@@ -17,6 +17,7 @@
           <li class='li-inline nav-item'><a href='#' id='logout'>Logout</a></li>
         {{else}}
           <li class='li-inline nav-item'><a href='/api/login'>Login</a></li>
+          <li class='li-inline nav-item'><a href='/api/signUp'>Sign Up</a></li>
         {{/if}}
       </ul>
     </nav>
@@ -43,11 +44,8 @@
 
     {{#if loggedIn}}
       <script src='/js/logout.js'></script>
-    {{/if}}
-      <script src='/js/login.js'></script>
-      <script src="/js/dashboard.js"></script>
-      <script src="/js/index.js"></script>
-      <script src="/js/signUp.js"></script>
+    {{/if}}  
+      <script src="/js/index.js"></script>     
   </body>
 
 </html>
