@@ -9,6 +9,14 @@ router.get('/', (req, res) => {
         res.status(500).json(error);
     }
 });
+// router.post('/', (req, res) => {
+//     try {
+
+//     }
+//     catch {
+
+//     }
+// })
 // Route to get all Users created in database
 router.get('/users', async (req, res) => {
 try {

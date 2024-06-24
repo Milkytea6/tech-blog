@@ -5,12 +5,14 @@ const signupBtn = document.getElementById('sign-up-submit');
 const signUpUser = async (event) => {
     event.preventDefault();
     console.log('signUpUser() ran');
+
     try {
         const newUser = {
             name: document.getElementById("sign-up-username").value.trim(),
             email: document.getElementById("sign-up-email").value.trim(),
             password: document.getElementById("sign-up-password").value.trim()
         }
+
         if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/i.test(newUser.password)) {
             window.alert('Password must be at least 8 characters long and contain at least one digit, one lowercase letter, and one uppercase letter.');   
         }
@@ -30,6 +32,7 @@ const signUpUser = async (event) => {
                 if (response.ok) {
                     return response.json();
                 } else {
+                    window.alert('Username or email already exists')
                     console.error('Failed to save data.');
                 }
             })
