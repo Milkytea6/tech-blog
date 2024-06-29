@@ -4,13 +4,13 @@ const loginUser = (e) => {
     try {
         console.log('loginUser() ran');
         e.preventDefault();
-        const username = document.getElementById('login-username');
-        const password = document.getElementById('login-password');
+        const username = document.getElementById('login-username').value.trim();
+        const password = document.getElementById('login-password').value.trim();
         console.log('Got elements');
         fetch('/api/login', {
             method: 'POST',
-            header: {
-                'content-Type': 'application/json'
+            headers: {
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({ name: username, password: password})
         })
@@ -18,7 +18,7 @@ const loginUser = (e) => {
         .then(response => {
             if (response.ok) {
                 console.log('response.ok');
-                document.location.replace('/dashboard');
+                document.location.replace('/api/dashboard');
             }
             else {
                 console.log('response not ok.')

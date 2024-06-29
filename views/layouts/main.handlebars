@@ -15,8 +15,8 @@
       <ul class='flex-row'>
         <li class='li-inline nav-item'><a href='/'>Home</a></li>
         <li class='li-inline nav-item'><a href='/api/dashboard'>Dashboard</a></li>
-        {{#if loggedIn}}
-          <li class='li-inline nav-item'><a href='#' id='logout'>Logout</a></li>
+        {{#if isLoggedIn}}
+          <li class='li-inline nav-item'><a href='/api/logout' id='logout'>Logout</a></li>
         {{else}}
           <li class='li-inline nav-item'><a href='/api/login'>Login</a></li>
           <li class='li-inline nav-item'><a href='/api/signUp'>Sign Up</a></li>
@@ -30,7 +30,7 @@
         <h1 class='app-title'><a href='/'>The Tech Blog</a></h1>
       {{/if}}
     </header>
-<main class='col-auto'>
+<main class='main col-auto'>
       {{{body}}}
     </main>
 

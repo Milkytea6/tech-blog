@@ -19,17 +19,23 @@ router.post('/', async (req, res) => {
         });
         if (verifyName) {
             console.log(`User ${verifyName} already exists`);
-            res.status(500).json({message: 'failed to create user'});
+            res.status(500).json({ message: 'failed to create user' });
         }
         else {
             const newUser = await User.create(req.body);
             console.log(newUser);
-            res.status(200).json({ message: `User ${newUser} created successfully` });
+
+            req.session.save(() => {
+                req.session.user_id = newUser.id;
+                req.session.logged_in = true;
+
+                res.status(200).json(newUser);
+            });
             res.render('dashboard');
         }
     } catch (error) {
         console.error('Failed to create new user', error);
-        res.status(500).json({message: 'failed to create user'});
+        res.status(500).json({ message: 'failed to create user' });
     }
 });
 

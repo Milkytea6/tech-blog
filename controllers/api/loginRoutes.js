@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+
 router.get('/', (req, res) => {
     try {
         res.render('login');
@@ -9,15 +10,7 @@ router.get('/', (req, res) => {
         res.status(500).json(error);
     }
 });
-// router.post('/', (req, res) => {
-//     try {
 
-//     }
-//     catch {
-
-//     }
-// })
-// Route to get all Users created in database
 router.get('/users', async (req, res) => {
 try {
     const users = await User.findAll();
@@ -36,11 +29,14 @@ catch (error) {
 
 router.post('/', async (req, res) => {
 
+  console.log(req.body)
     try {
       const username = req.body.name;
       const password = req.body.password;
-  
-      const userData = await User.findOne({ name: username } );
+      console.log('username',username)
+      console.log('password',password)
+      const userData = await User.findOne({ where: { name: username } });
+      console.log('userData',userData)
       if (!userData) {
         return       res
         .status(400)
@@ -50,6 +46,12 @@ router.post('/', async (req, res) => {
         console.log('Password is incorrect.')
       }
       else {
+        req.session.save(() => {
+          req.session.user_id = userData.id;
+          req.session.logged_in = true;
+    
+          res.status(200).json(userData);
+        });
         console.log('Successful login');
       }
   

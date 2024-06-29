@@ -1,0 +1,11 @@
+.sign-up,
+.login,
+.new-post{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.form-section{
+    display: flex;
+    justify-content: center;
+}
