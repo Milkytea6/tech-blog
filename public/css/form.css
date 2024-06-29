@@ -4,8 +4,14 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding: 10px;
 }
 .form-section{
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.form-section label{
+    margin: 0px 10px;
 }
