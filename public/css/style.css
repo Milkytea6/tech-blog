@@ -1,6 +1,30 @@
+body{
+    background-color: beige;
+}
+main{
+    background-color: azure;
+    border: 5px solid #222222;
+}
 .hero{
     text-align: center;
 }
 .main h2{
     text-align: center;
+}
+.navbar{
+    display: flex;
+    justify-content: center;
+}
+.navbar ul{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+}
+.navbar ul li{
+    font-size: larger;
+    text-decoration: none;
+}
+.navbar ul li:hover{
+    color: aqua;
+    transform: scale(1.2);
 }
