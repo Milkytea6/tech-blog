@@ -30,6 +30,7 @@ const signUpUser = async (event) => {
             })
             .then(response => {
                 if (response.ok) {
+                    document.location.replace('/api/dashboard');
                     return response.json();
                 } else {
                     window.alert('Username or email already exists')

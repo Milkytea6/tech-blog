@@ -1,0 +1,10 @@
+.post-container{
+    display: flex;
+    justify-content: center;
+}
+.post{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 5px solid black;
+}

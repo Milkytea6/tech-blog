@@ -1,21 +1,30 @@
-{{#each postData}}
-<div class="post">
-    <h2 class="post-title">{{this.title}}</h2>
-    <p class="post-content">{{this.content}}</p>
-    <p class="post-date">{{this.date_created}}</p>
+<h2>Dashboard</h2>
+<div class="post-container">
+    {{#each postData}}
+    <div class="post">
+        <h3 class="post-title">{{this.title}}</h3>
+        <p class="post-content">{{this.content}}</p>
+        <p class="post-date">{{this.date_created}}</p>
+    </div>
+    {{/each}}
 </div>
-{{/each}}
-<h3>Create New Post</h3>
 <div class="new-post-container">
-    <form class="new-post-form">
+    
+    <form class="new-post">
+        <div class="form-section">
+            <h3>Create New Post</h3>
+        </div>
         <div class="form-section">
             <label>Title</label>
-            <input type="text" id="new-title">
+            <input type="text" id="new-post-title">
         </div>
         <div class="form-section">
             <label>Content</label>
-            <input type="text" id="new-content">
+            <input type="text" id="new-post-content">
+        </div>
+        <div class="form-section">
+            <button id="new-post-submit">Create</button>
         </div>
     </form>
 </div>
- <script src="/js/dashboard.js"></script>
+<script src="/js/dashboard.js"></script>
