@@ -1,8 +1,14 @@
 <h2>Home Page</h2>
 {{#each postData}}
-<div class="post">
-    <h3 class="post-title">{{this.title}}</h3>
-    <p class="post-content">{{this.content}}</p>
-    <p class="post-date">Posted {{this.date_created}}</p>
+<div class="post-container">
+    <div class="post">
+        <div class="post-header">
+            <h3 class="post-title">{{this.title}}</h3>
+            <p class="post-date">Posted {{this.date_created}}</p>
+        </div>
+        <div class="post-content">
+            <p class="post-content">{{this.content}}</p>
+        </div>
+    </div>
 </div>
 {{/each}}

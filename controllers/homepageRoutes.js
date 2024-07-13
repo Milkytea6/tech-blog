@@ -1,6 +1,5 @@
 const router =require('express').Router();
 const { User, Post, Comment } = require('../models');
-
 router.get('/', async (req, res) => {
   const isLoggedIn = Boolean(req.session.logged_in);
   // use auth to create a variable called isLoggedIn to determine if user is logged in or not 
